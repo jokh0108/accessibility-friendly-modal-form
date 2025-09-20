@@ -10,8 +10,10 @@ const ModalForm = ({ onClose }) => {
 
   return (
     <div className="flex flex-col">
-      <h1>신청 폼</h1>
-      <span>이메일과 FE 경력 연차 등 간단한 정보를 입력해주세요</span>
+      <h1 id="modal-title">신청 폼</h1>
+      <h2 id="modal-description">
+        이메일과 FE 경력 연차 등 간단한 정보를 입력해주세요
+      </h2>
 
       <form className="flex flex-col" onSubmit={handleSubmit}>
         <label htmlFor="name">이름 / 닉네임</label>

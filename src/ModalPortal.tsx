@@ -36,6 +36,7 @@ export default function ModalPortal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
+        aria-describedby="modal-description"
       >
         {/* Backdrop */}
         <div
