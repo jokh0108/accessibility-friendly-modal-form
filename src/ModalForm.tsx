@@ -12,7 +12,8 @@ const ModalForm = ({ onClose }) => {
     <div className="flex flex-col">
       <h1>신청 폼</h1>
       <span>이메일과 FE 경력 연차 등 간단한 정보를 입력해주세요</span>
-      <form onSubmit={handleSubmit}>
+
+      <form className="flex flex-col" onSubmit={handleSubmit}>
         <label htmlFor="name">이름 / 닉네임</label>
         <input name="name" />
 
@@ -29,10 +30,12 @@ const ModalForm = ({ onClose }) => {
         <label htmlFor="github">Github 링크 (선택)</label>
         <input name="github" />
 
-        <button type="button" onClick={onClose}>
-          취소
-        </button>
-        <button type="submit">제출</button>
+        <div className="self-end flex flex-row items-center ">
+          <button type="button" onClick={onClose}>
+            취소
+          </button>
+          <button type="submit">제출</button>
+        </div>
       </form>
     </div>
   );
