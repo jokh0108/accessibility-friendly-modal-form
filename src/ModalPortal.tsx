@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 export default function ModalPortal({
   children,
@@ -7,6 +8,22 @@ export default function ModalPortal({
   closeModal: () => void;
 }) {
   const modalRoot = document.getElementById("modal");
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && children) {
+        closeModal();
+      }
+    };
+
+    if (children) {
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [children, closeModal]);
 
   if (!modalRoot) {
     return null;
