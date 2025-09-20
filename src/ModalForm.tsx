@@ -1,5 +1,9 @@
-const ModalForm = ({ onClose }) => {
-  const handleSubmit = (e) => {
+interface ModalFormProps {
+  onClose: () => void;
+}
+
+const ModalForm = ({ onClose }: ModalFormProps) => {
+  const handleSubmit = (e: HTMLFormElement) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
